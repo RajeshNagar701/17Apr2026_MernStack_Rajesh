@@ -1,0 +1,64 @@
+
+<!--
+
+document.write("Hello");
+window.alert("Hello");
+
+print
+innerHTML  document.getElementById('text').innerHTML="<H1>text hello<H1>"  
+innerText  document.getElementById('text').innerText="<H1>text hello<H1>"
+value	   document.getElementById('text').value="text hello"
+
+
+get 
+var htmlcode=document.getElementById('test1').innerHTML"  
+var textcode=document.getElementById('test1').innerText"
+var valuecode=document.getElementById('test1').value"
+
+-->
+
+
+<h1 id="test1">Hi i am HTML</h1>
+<h1 id="test2">Hi i am HTML</h1>
+
+<input type="text" id="test3" value="">
+
+<script>
+	//document.write("Hello");  // direct print
+	//window.alert("hello")     // popup me print
+	
+	document.getElementById('test1').innerHTML="<h1>Hi i am Javascript</h1>";
+	document.getElementById('test2').innerText="<h1>Hi i am Text</h1>";
+	document.getElementById('test3').value="RAJ NAGAR";
+	
+	//=======================================================
+</script>
+
+<hr>
+
+<h1 id="demo1">Hi i am HTML</h1>
+<p id="msg1"></p>
+
+<hr>
+
+<h1 id="demo2">Hi i am HTML</h1>
+<p id="msg2"></p>
+
+<hr>
+
+<input type="text" id="demo3" value="Raj Nagar">
+<input type="text" id="msg3" value="">
+
+<script>
+
+	var html=document.getElementById('demo1').innerHTML;
+	document.getElementById('msg1').innerHTML=html;
+	
+	var text=document.getElementById('demo2').innerText;
+	document.getElementById('msg2').innerText=text;
+	
+	var val=document.getElementById('demo3').value
+	document.getElementById('msg3').value=val;
+	
+	//=======================================================
+</script>
