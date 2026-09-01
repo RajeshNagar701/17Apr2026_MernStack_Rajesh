@@ -9,9 +9,9 @@ document.getElementById('mylocation').innerHTML=data;
 document.getElementById('myloca').innerText=msg;  
 document.getElementById('myloca').value=msg; 
 
-getElementsByName()	returns all the elements having the given name value.
-getElementsByTagName()	returns all the elements having the given tag name.
-getElementsByClassName()	returns all the elements having the given class name.
+getElementsByName('gender')	returns all the elements having the given name value.
+getElementsByTagName('h2')	returns all the elements having the given tag name.
+getElementsByClassName('gender')	returns all the elements having the given class name.
 if(document.myForm1.userPass.value.length>5) // document.forms["myform"]["ufn"].value; 
 
 */
@@ -136,12 +136,32 @@ function byformname()
 		document.getElementById('myloca').style.color="green";	
 	}  
 	*/
-	
-	if(document.forms['myForm1']['userPass'].value.length>5) // if(document.forms["myform"]["ufn"].value>5)
+	if(document.forms['myForm1']['userPass'].value=="") // if(document.forms["myform"]["ufn"].value>5)
 	{  
-		document.getElementById('myloca').innerText="Good";
+		document.getElementById('myloca').innerText="Field is required";
+		document.getElementById('myloca').style.color="red";	
+	}	
+	else if(document.forms['myForm1']['userPass'].value.length>12)
+	{
+		document.getElementById('myloca').innerText="Best Password";
 		document.getElementById('myloca').style.color="green";	
-	}  
+	}
+	else if(document.forms['myForm1']['userPass'].value.length>8)
+	{
+		document.getElementById('myloca').innerText="Good Password";
+		document.getElementById('myloca').style.color="yellow";	
+	}
+	else if(document.forms['myForm1']['userPass'].value.length>5)
+	{
+		document.getElementById('myloca').innerText="Average Password";
+		document.getElementById('myloca').style.color="orange";	
+	}
+	else
+	{
+		document.getElementById('myloca').innerText="Weak Password";
+		document.getElementById('myloca').style.color="red";	
+	}
+	
 	
 }  
   
