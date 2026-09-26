@@ -6,8 +6,11 @@ import React_jsx from './Jsx/React_jsx';
 import About from './Layout/About';
 import Home from './Layout/Home';
 import Module_css from './Module_css/Module_css';
+import Mui from './MUI/Mui';
 import Props_main from './Props/Props_main';
+import React_bootstrap from './React_bootstrap/React_bootstrap';
 import Sass_css from './Sass_css/Sass_css';
+import Styled_component from './Styled_component/Styled_component';
 
 function App() {
   return (
@@ -28,12 +31,17 @@ function App() {
         //4) Props
         //<Props_main/>
 
-        //css
+        //5)css
         //<Css_React/>
         //<h1 className='biggreen'>Class conflict</h1>
 
-        //<Module_css/>
-        <Sass_css/>
+        //6)<Module_css/>
+        //<Sass_css/>
+
+        //7) Readyment Component React-bootstrap, MUI 
+        //<React_bootstrap/>
+        //<Mui/>
+        //<Styled_component/>
       }
 
         
