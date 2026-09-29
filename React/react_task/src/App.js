@@ -10,6 +10,8 @@ import Mui from './MUI/Mui';
 import Props_main from './Props/Props_main';
 import React_bootstrap from './React_bootstrap/React_bootstrap';
 import Sass_css from './Sass_css/Sass_css';
+import State_class from './State/Class/State_class';
+import State_func from './State/Func/State_func';
 import Styled_component from './Styled_component/Styled_component';
 
 function App() {
@@ -42,6 +44,13 @@ function App() {
         //<React_bootstrap/>
         //<Mui/>
         //<Styled_component/>
+
+        //=============================================================
+        //8) state
+        //<State_func/>
+        <State_class/>
+
+
       }
 
         
