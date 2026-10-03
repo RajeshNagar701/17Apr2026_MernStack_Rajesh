@@ -2,17 +2,23 @@
 import Class_component from './Component/Class_component';
 import Func_component from './Component/Func_component'
 import Css_React from './css/Css_React';
+import All_Hooks from './Hooks/All_Hooks';
 import React_jsx from './Jsx/React_jsx';
 import About from './Layout/About';
 import Home from './Layout/Home';
+import Class_life from './Life_cycle/Class/Class_life';
+import Func_life from './Life_cycle/Func/Func_life';
 import Module_css from './Module_css/Module_css';
 import Mui from './MUI/Mui';
 import Props_main from './Props/Props_main';
 import React_bootstrap from './React_bootstrap/React_bootstrap';
+import LApp from './Routing_src/LApp';
 import Sass_css from './Sass_css/Sass_css';
 import State_class from './State/Class/State_class';
 import State_func from './State/Func/State_func';
 import Styled_component from './Styled_component/Styled_component';
+import Props_drilling from './useContext/Props_drilling/Props_drilling';
+import Use_context from './useContext/Use_context';
 
 function App() {
   return (
@@ -46,11 +52,23 @@ function App() {
         //<Styled_component/>
 
         //=============================================================
-        //8) state
+        //8) Routing  
+        //<LApp/>
+
+        //9) Hooks
+        //<All_Hooks/>
+
+        //10) state
         //<State_func/>
-        <State_class/>
+        //<State_class/>
 
+        //11) Lifecycle
+        //<Class_life/>
+        //<Func_life/>
 
+        //12} useContext / Props Drilling
+        //<Props_drilling/>
+        <Use_context/>
       }
 
         
