@@ -68,7 +68,7 @@ function App() {
 
         //12} useContext / Props Drilling
         //<Props_drilling/>
-        <Use_context/>
+        //<Use_context/>
       }
 
         
