@@ -1,0 +1,60 @@
+{
+    "category":[
+        {
+            "id":1,
+            "name":"Web Designing",
+            "image":"web.jpg"
+        },
+        {
+            "id":2,
+            "name":"Web Devloping",
+            "image":"web.jpg"
+        },
+        {
+            "id":3,
+            "name":"Hardware-Networking",
+            "image":"web.jpg"
+        }
+    ],
+
+    "course":[
+        {
+            "id":1,
+            "cate_id":1,
+            "name":"Grapgic",
+            "image":"Grapgic.jpg"
+        },
+        {
+            "id":2,
+            "cate_id":1,
+            "name":"UI/UX",
+            "image":"ui_ux.jpg"
+        },
+        {
+            "id":3,
+            "cate_id":2,
+            "name":"Full-stack",
+            "image":"fs.jpg"
+        }
+    ],
+    "team":[
+        {
+            "id":1,
+            "name":"Hardik",
+            "image":"team1.jpg",
+            "role":"Full-Stack Developer"
+        },
+         {
+            "id":2,
+            "name":"Komal",
+            "image":"team2.jpg",
+            "role":"Full-Stack Developer"
+        },
+         {
+            "id":1,
+            "name":"Jay",
+            "image":"team2.jpg",
+            "role":"Mern-Stack Developer"
+        }
+    ]
+}
