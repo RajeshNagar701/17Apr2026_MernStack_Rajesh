@@ -114,15 +114,15 @@ function Home_header() {
                         <NavLink to="/" className="nav-item nav-link">Home</NavLink>
                         <NavLink to="/about" className="nav-item nav-link">About</NavLink>
                         <NavLink to="/courses" className="nav-item nav-link">Courses</NavLink>
+                        <NavLink to="/team" className="nav-item nav-link">Our Team</NavLink>
+                        <NavLink to="/testimonial" className="nav-item nav-link">Testimonial</NavLink>
+                        <NavLink to="/contact" className="nav-item nav-link">Contact</NavLink>
                         <div className="nav-item dropdown">
-                            <a href="#" className="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
+                            <a href="#" className="nav-link dropdown-toggle" data-bs-toggle="dropdown">My Account</a>
                             <div className="dropdown-menu fade-down m-0">
-                                <NavLink to="/team" className="dropdown-item">Our Team</NavLink>
-                                <NavLink to="/testimonial" className="dropdown-item">Testimonial</NavLink>
-                                <NavLink to="/pnf" className="dropdown-item">404 Page</NavLink>
+                                <NavLink to="/pnf" className="dropdown-item">Profile</NavLink>
                             </div>
                         </div>
-                        <NavLink to="/contact" className="nav-item nav-link">Contact</NavLink>
                     </div>
                     <a href className="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Join Now<i className="fa fa-arrow-right ms-3" /></a>
                 </div>

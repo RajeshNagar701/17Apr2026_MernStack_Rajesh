@@ -1,60 +1,89 @@
 {
-    "category":[
-        {
-            "id":1,
-            "name":"Web Designing",
-            "image":"web.jpg"
-        },
-        {
-            "id":2,
-            "name":"Web Devloping",
-            "image":"web.jpg"
-        },
-        {
-            "id":3,
-            "name":"Hardware-Networking",
-            "image":"web.jpg"
-        }
-    ],
-
-    "course":[
-        {
-            "id":1,
-            "cate_id":1,
-            "name":"Grapgic",
-            "image":"Grapgic.jpg"
-        },
-        {
-            "id":2,
-            "cate_id":1,
-            "name":"UI/UX",
-            "image":"ui_ux.jpg"
-        },
-        {
-            "id":3,
-            "cate_id":2,
-            "name":"Full-stack",
-            "image":"fs.jpg"
-        }
-    ],
-    "team":[
-        {
-            "id":1,
-            "name":"Hardik",
-            "image":"team1.jpg",
-            "role":"Full-Stack Developer"
-        },
-         {
-            "id":2,
-            "name":"Komal",
-            "image":"team2.jpg",
-            "role":"Full-Stack Developer"
-        },
-         {
-            "id":1,
-            "name":"Jay",
-            "image":"team2.jpg",
-            "role":"Mern-Stack Developer"
-        }
-    ]
+  "category": [
+    {
+      "id": "1",
+      "name": "Web Designing",
+      "image": "web.jpg"
+    },
+    {
+      "id": "2",
+      "name": "Web Devloping",
+      "image": "web.jpg"
+    }
+  ],
+  "course": [
+    {
+      "id": "1",
+      "cate_id": 1,
+      "name": "Grapgic",
+      "image": "Grapgic.jpg",
+      "price": "19,999/-"
+    },
+    {
+      "id": "2",
+      "cate_id": 1,
+      "name": "UI/UX",
+      "image": "ui_ux.jpg",
+      "price": "28,999/-"
+    }
+  ],
+  "team": [
+    {
+      "id": "2",
+      "name": "Komal",
+      "image": "team2.jpg",
+      "role": "Full-Stack Developer"
+    },
+    {
+      "id": "1",
+      "name": "Jay",
+      "image": "team2.jpg",
+      "role": "Mern-Stack Developer"
+    }
+  ],
+  "testimonial": [
+    {
+      "id": "2",
+      "title": "Komal",
+      "image": "team2.jpg"
+    },
+    {
+      "id": "1",
+      "title": "Jay",
+      "image": "team2.jpg"
+    }
+  ],
+  "student": [
+    {
+      "id": "1",
+      "name": "Hardik",
+      "email": "hardik@gmail.com",
+      "password": "abc@123",
+      "image": "team1.jpg",
+      "mobile": "1236547891"
+    },
+    {
+      "id": "2",
+      "name": "Nirav",
+      "email": "Nirav@gmail.com",
+      "password": "Nirav@123",
+      "image": "team1.jpg",
+      "mobile": "1236547891"
+    }
+  ],
+  "contact": [
+    {
+      "id": "1",
+      "name": "akash",
+      "email": "akash@gmail.com",
+      "comment": "hello address plz"
+    },
+    {
+      "id": "2",
+      "name": "nayan",
+      "email": "nayan@gmail.com",
+      "comment": "hello address plz"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
 }

@@ -1,6 +1,24 @@
-import React from 'react'
+import axios from 'axios';
+import React, { useEffect, useState } from 'react'
 
 function Manage_categories() {
+
+    useEffect(() => {
+        fetch();
+    },[]);
+
+    const [data, setData] = useState([]);
+    const fetch = async () => {
+        const res = await axios.get(`http://localhost:3000/category`);
+        console.log(res.data);
+        setData(res.data);
+    }
+
+    const deleteHandel=async(id)=>{
+        const res=await axios.delete(`http://localhost:3000/category/${id}`);
+        fetch();
+    }
+
     return (
         <div>
             <div className="container-xxl py-5">
@@ -22,24 +40,23 @@ function Manage_categories() {
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>Developing</td>
-                                        <td><img src="" alt="" /></td>
-                                        <td>
-                                            <button className='btn btn-danger'>Delete</button>
-                                            <button className='btn btn-primary'>Edit</button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>Developing</td>
-                                        <td><img src="" alt="" /></td>
-                                        <td>
-                                            <button className='btn btn-danger'>Delete</button>
-                                            <button className='btn btn-primary'>Edit</button>
-                                        </td>
-                                    </tr>
+                                    {
+                                        data.map((value, index, arr) => {
+                                            return (
+                                                <tr>
+                                                    <td>{value.id}</td>
+                                                    <td>{value.name}</td>
+                                                    <td><img src={value.image} alt="" /></td>
+                                                    <td>
+                                                        <button className='btn btn-danger' onClick={()=>deleteHandel(value.id)}>Delete</button>
+                                                        <button className='btn btn-primary'>Edit</button>
+                                                    </td>
+                                                </tr>
+                                            )
+                                        })
+                                    }
+
+                                   
                                 </tbody>
                             </table>
 
