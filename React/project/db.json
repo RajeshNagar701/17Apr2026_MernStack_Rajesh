@@ -1,30 +1,49 @@
 {
   "category": [
     {
-      "id": "1",
-      "name": "Web Designing",
-      "image": "web.jpg"
+      "name": "Designing",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_ueRwWFQKoBmR15RKD_02efmAWgbejytrjWTliFABUg&s=10",
+      "id": "c0iTMIZ2iMo"
     },
     {
-      "id": "2",
-      "name": "Web Devloping",
-      "image": "web.jpg"
+      "name": "Developing",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcsFvLZkWZTKSJFlM07Y0Bn6ltECOni82b5YQLENkPRQ&s=10",
+      "id": "XGBJf9uQVNU"
+    },
+    {
+      "name": "Marketing",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpt7y_il-cEHP0dXLIthgYM5XuwZkqcGV94sKAwJEstw&s=10",
+      "id": "xPRT9N9NcLg"
     }
   ],
   "course": [
     {
-      "id": "1",
-      "cate_id": 1,
-      "name": "Grapgic",
-      "image": "Grapgic.jpg",
-      "price": "19,999/-"
+      "cate_id": "c0iTMIZ2iMo",
+      "name": "Graphic Designing",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdCB3lHvRBkcv19dYj8NrbPAZXWupYET-wxPGfpmToeQ&s=10",
+      "price": "30000",
+      "id": "cjqeyjFacpQ"
     },
     {
-      "id": "2",
-      "cate_id": 1,
+      "cate_id": "c0iTMIZ2iMo",
       "name": "UI/UX",
-      "image": "ui_ux.jpg",
-      "price": "28,999/-"
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpJZQW3tYLwIhiVqCJLAL1fc37VucPahYh1yEqGn-RyA&s=10",
+      "price": "25000",
+      "id": "CjQyTKROuQM"
+    },
+    {
+      "cate_id": "XGBJf9uQVNU",
+      "name": "FullStack",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNsCVQKTae3YbzpKDBSasFKBV4My9aM3EHTksImhKr9A&s=10",
+      "price": "40000",
+      "id": "XMsQMrpUsV0"
+    },
+    {
+      "cate_id": "xPRT9N9NcLg",
+      "name": "Digital Marketing",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPW8bKXq0iZV2ozwonxNoiLzPrDn8rKJ_2BWxPmzWUPA&s=10",
+      "price": "35000",
+      "id": "dhXMogMHdu8"
     }
   ],
   "team": [
@@ -55,34 +74,26 @@
   ],
   "student": [
     {
-      "id": "1",
-      "name": "Hardik",
-      "email": "hardik@gmail.com",
-      "password": "abc@123",
-      "image": "team1.jpg",
-      "mobile": "1236547891"
-    },
-    {
-      "id": "2",
-      "name": "Nirav",
-      "email": "Nirav@gmail.com",
-      "password": "Nirav@123",
-      "image": "team1.jpg",
-      "mobile": "1236547891"
+      "name": "Raj",
+      "email": "raj@gmail.com",
+      "password": "1234",
+      "image": "data:image/jpeg;base64,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",
+      "mobile": "1236547891",
+      "id": "TsC6VowKIQ8"
     }
   ],
   "contact": [
     {
-      "id": "1",
-      "name": "akash",
-      "email": "akash@gmail.com",
-      "comment": "hello address plz"
+      "name": "Nagar",
+      "email": "nagar@gmail.com",
+      "comment": "hello address plz",
+      "id": "rDTD0EkbhM0"
     },
     {
-      "id": "2",
-      "name": "nayan",
-      "email": "nayan@gmail.com",
-      "comment": "hello address plz"
+      "name": "akash",
+      "email": "akash@gmail.com",
+      "comment": "mobile plz",
+      "id": "uYZavmNF8VU"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

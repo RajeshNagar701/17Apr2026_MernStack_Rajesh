@@ -1,6 +1,26 @@
-import React from 'react'
+import axios from 'axios';
+import React, { useState } from 'react'
 
 function Add_categories() {
+
+    const [formvalue,setFormvalue]=useState({
+        name:"",
+        image:""
+    })
+
+    const changeHandel=(e)=>{
+        setFormvalue({...formvalue,id:new Date().getTime().toString(),[e.target.name]:e.target.value})
+        console.log(formvalue);
+    }
+
+    const submitHandel = async (e) => {
+        e.preventDefault(); // not refresh
+        const res = await axios.post(`http://localhost:3000/category`,formvalue);
+        setFormvalue({...formvalue,name:"",image:""})
+        alert('Submited Success!')
+        return false;
+    }
+
     return (
         <div>
             <div className="container-xxl py-5">
@@ -12,18 +32,18 @@ function Add_categories() {
                     <div className="row g-4">
 
                         <div className="offset-md-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                            <form>
+                            <form method='post'  onSubmit={submitHandel}>
                                 <div className="row g-3">
                                     <div className="col-12">
                                         <div className="form-floating">
-                                            <input type="text" className="form-control" id="email" placeholder="Email" />
+                                            <input type="text" value={formvalue.name} onChange={changeHandel} name='name' className="form-control"  placeholder="Category Name" />
                                             <label htmlFor="Email">Categories Name</label>
                                         </div>
                                     </div>
                                     <div className="col-12">
                                         <div className="form-floating">
-                                            <input type="file" className="form-control" id="subject" placeholder="Password" />
-                                            <label htmlFor="Password">Upload Image</label>
+                                            <input type="url" value={formvalue.image} onChange={changeHandel} name='image' className="form-control" placeholder="Enter Image URL" />
+                                            <label htmlFor="Password">Enter Image URL</label>
                                         </div>
                                     </div>
 

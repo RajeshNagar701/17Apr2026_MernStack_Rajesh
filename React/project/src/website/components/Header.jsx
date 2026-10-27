@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { NavLink } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 
 
 
@@ -83,7 +83,7 @@ function Header({ title }) {
                             </div>
                         </div>
                     </div>
-                    <a href className="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Join Now<i className="fa fa-arrow-right ms-3" /></a>
+                    <Link to="/signup" className="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Signup<i className="fa fa-arrow-right ms-3" /></Link>
                 </div>
             </nav>
             {/* Navbar End */}

@@ -23,6 +23,7 @@ import Add_testimonial from "./admin/pages/Add_testimonial";
 import Manage_testimonial from "./admin/pages/Manage_testimonial";
 import Manage_student from "./admin/pages/Manage_student";
 import Manage_contact from "./admin/pages/Manage_contact";
+import Signup from "./website/pages/Signup";
 
 function App() {
   return (
@@ -35,6 +36,7 @@ function App() {
           <Route path="/courses" element={<><Header title="Course"/><Course/><Footer/></>}></Route>
           <Route path="/team" element={<><Header title="Team"/><Team/><Footer/></>}></Route>
           <Route path="/testimonial" element={<><Header title="Testimonial"/><Testimonial/><Footer/></>}></Route>
+          <Route path="/signup" element={<><Header title="Signup"/><Signup/><Footer/></>}></Route>
           <Route path="*" element={<><Header title="Page Not Found"/><Pnf/><Footer/></>}></Route>
 
 

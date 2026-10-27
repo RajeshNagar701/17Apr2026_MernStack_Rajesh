@@ -48,7 +48,7 @@ function Manage_courses() {
                                                     <td>{value.id}</td>
                                                     <td>{value.cate_id}</td>
                                                     <td>{value.name}</td>
-                                                    <td><img src={value.image} alt="" /></td>
+                                                    <td><img src={value.image} width="50px" alt="" /></td>
                                                     <td>{value.price}</td>
                                                     <td>
                                                         <button className='btn btn-danger' onClick={()=>deleteHandel(value.id)}>Delete</button>
