@@ -24,6 +24,8 @@ import Manage_testimonial from "./admin/pages/Manage_testimonial";
 import Manage_student from "./admin/pages/Manage_student";
 import Manage_contact from "./admin/pages/Manage_contact";
 import Signup from "./website/pages/Signup";
+import View_course from "./website/pages/View_course";
+import Edit_category from "./admin/pages/Edit_category";
 
 function App() {
   return (
@@ -33,7 +35,8 @@ function App() {
           <Route path="/" element={<><Home_header/><Home/><Footer/></>}></Route>
           <Route path="/about" element={<><Header title="About"/><About/><Footer/></>}></Route>
           <Route path="/contact" element={<><Header title="Contact"/><Contacts/><Footer/></>}></Route>
-          <Route path="/courses" element={<><Header title="Course"/><Course/><Footer/></>}></Route>
+          <Route path="/courses" element={<><Header title="Course Categories"/><Course/><Footer/></>}></Route>
+          <Route path="/view_course/:id" element={<><Header title="View Course"/><View_course/><Footer/></>}></Route>
           <Route path="/team" element={<><Header title="Team"/><Team/><Footer/></>}></Route>
           <Route path="/testimonial" element={<><Header title="Testimonial"/><Testimonial/><Footer/></>}></Route>
           <Route path="/signup" element={<><Header title="Signup"/><Signup/><Footer/></>}></Route>
@@ -44,6 +47,8 @@ function App() {
           <Route path="/dashboard" element={<><Aheade title="Dashboard"/><Dashboard/><Afooter/></>}></Route>
           <Route path="/add_categories" element={<><Aheade title="Add Categories"/><Add_categories/><Afooter/></>}></Route>
           <Route path="/manage_categories" element={<><Aheade title="Manage Categories"/><Manage_categories/><Afooter/></>}></Route>
+          <Route path="/edit_category/:id" element={<><Aheade title="Edit Category"/><Edit_category/><Afooter/></>}></Route>
+          
           <Route path="/add_courses" element={<><Aheade title="Add Course"/><Add_courses/><Afooter/></>}></Route>
           <Route path="/manage_courses" element={<><Aheade title="Manage Course"/><Manage_courses/><Afooter/></>}></Route>
           <Route path="/add_team" element={<><Aheade title="Add Team"/><Add_team/><Afooter/></>}></Route>

@@ -1,7 +1,11 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
+import { useNavigate, useParams } from 'react-router-dom';
 
 function Manage_categories() {
+
+   
+    const redirect=useNavigate();
 
     useEffect(() => {
         fetch();
@@ -49,7 +53,7 @@ function Manage_categories() {
                                                     <td><img src={value.image} width="50px" alt="" /></td>
                                                     <td>
                                                         <button className='btn btn-danger' onClick={()=>deleteHandel(value.id)}>Delete</button>
-                                                        <button className='btn btn-primary'>Edit</button>
+                                                        <button className='btn btn-primary' onClick={()=>redirect('/edit_category/'+ value.id)}>Edit</button>
                                                     </td>
                                                 </tr>
                                             )

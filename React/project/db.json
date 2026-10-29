@@ -6,7 +6,7 @@
       "id": "c0iTMIZ2iMo"
     },
     {
-      "name": "Developing",
+      "name": "Web Developing",
       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcsFvLZkWZTKSJFlM07Y0Bn6ltECOni82b5YQLENkPRQ&s=10",
       "id": "XGBJf9uQVNU"
     },
@@ -26,16 +26,16 @@
     },
     {
       "cate_id": "c0iTMIZ2iMo",
-      "name": "UI/UX",
+      "name": "UI/UX Designing",
       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpJZQW3tYLwIhiVqCJLAL1fc37VucPahYh1yEqGn-RyA&s=10",
-      "price": "25000",
+      "price": "35000",
       "id": "CjQyTKROuQM"
     },
     {
       "cate_id": "XGBJf9uQVNU",
-      "name": "FullStack",
+      "name": "FullStack Development",
       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNsCVQKTae3YbzpKDBSasFKBV4My9aM3EHTksImhKr9A&s=10",
-      "price": "40000",
+      "price": "50000",
       "id": "XMsQMrpUsV0"
     },
     {
