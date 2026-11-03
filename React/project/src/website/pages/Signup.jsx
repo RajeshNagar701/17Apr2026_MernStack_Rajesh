@@ -1,27 +1,38 @@
 import axios from 'axios';
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom';
 
 function Signup() {
 
-    const [formvalue,setFormvalue]=useState({
-        name:"",
-        email:"",
-        password:"",
-        image:"",
-        mobile:""
+    const [formvalue, setFormvalue] = useState({
+        name: "",
+        email: "",
+        password: "",
+        image: "",
+        mobile: ""
     })
 
-    const changeHandel=(e)=>{
-        setFormvalue({...formvalue,id:new Date().getTime().toString(),[e.target.name]:e.target.value})
+    const changeHandel = (e) => {
+        setFormvalue({ ...formvalue, id: new Date().getTime().toString(), [e.target.name]: e.target.value })
         console.log(formvalue);
     }
 
     const submitHandel = async (e) => {
         e.preventDefault(); // not refresh
-        const res = await axios.post(`http://localhost:3000/student`,formvalue);
-        setFormvalue({...formvalue,name:"",email:"",password:"",image:"",mobile:""})
-        alert('Signup Success!')
-        return false;
+        const result = await axios.get(`http://localhost:3000/student?email=${formvalue.email}`);
+        if (result.data.length > 0) {
+            alert('Email id is already Exist, Failed!')
+            return false;
+        }
+        else
+        {
+            const res = await axios.post(`http://localhost:3000/student`, formvalue);
+            setFormvalue({ ...formvalue, name: "", email: "", password: "", image: "", mobile: "" })
+            alert('Signup Success!')
+            return false;
+        }
+
+
     }
 
 
@@ -35,8 +46,8 @@ function Signup() {
                         <h1 className="mb-5">Signup Here</h1>
                     </div>
                     <div className="row g-4">
-                        
-                       
+
+
                         <div className="offset-md-3 col-lg-6 col-md-12 wow fadeInUp" data-wow-delay="0.5s">
                             <form method='post' onSubmit={submitHandel}>
                                 <div className="row g-3">
@@ -54,7 +65,7 @@ function Signup() {
                                     </div>
                                     <div className="col-md-12">
                                         <div className="form-floating">
-                                            <input type="password" value={formvalue.password} onChange={changeHandel} name='password' className="form-control"  placeholder="Your password" />
+                                            <input type="password" value={formvalue.password} onChange={changeHandel} name='password' className="form-control" placeholder="Your password" />
                                             <label htmlFor="email">Your password</label>
                                         </div>
                                     </div>
@@ -66,12 +77,13 @@ function Signup() {
                                     </div>
                                     <div className="col-md-12">
                                         <div className="form-floating">
-                                            <input type="number" value={formvalue.mobile} onChange={changeHandel} name='mobile' className="form-control"  placeholder="Your mobile" />
+                                            <input type="number" value={formvalue.mobile} onChange={changeHandel} name='mobile' className="form-control" placeholder="Your mobile" />
                                             <label htmlFor="email">Your mobile</label>
                                         </div>
                                     </div>
                                     <div className="col-12">
                                         <button className="btn btn-primary w-100 py-3" type="submit">Signup</button>
+                                        <Link to="/login">If yoyu allready Registered then Login Here</Link>
                                     </div>
                                 </div>
                             </form>

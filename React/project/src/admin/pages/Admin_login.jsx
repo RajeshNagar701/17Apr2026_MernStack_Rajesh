@@ -1,6 +1,45 @@
-import React from 'react'
+import axios from 'axios';
+import React, { useState } from 'react'
+import { Link, useNavigate } from 'react-router-dom';
 
 function Admin_login() {
+
+    const [formvalue, setFormvalue] = useState({
+        email: "",
+        password: ""
+    })
+
+    const changeHandel = (e) => {
+        setFormvalue({ ...formvalue, [e.target.name]: e.target.value })
+        console.log(formvalue);
+    }
+
+    const redirect = useNavigate();
+    const submitHandel = async (e) => {
+        e.preventDefault(); // not refresh
+        const res = await axios.get(`http://localhost:3000/admin?email=${formvalue.email}`);
+        if (res.data.length > 0) {
+            if (res.data[0].password == formvalue.password) {
+
+                // authantication
+                sessionStorage.setItem('a_id', res.data[0].id)
+                sessionStorage.setItem('a_name', res.data[0].name)
+
+                alert('Login Success!')
+                redirect('/dashboard');
+                return false;
+            }
+            else {
+                alert('Password Not Match!')
+                return false;
+            }
+        }
+        else {
+            alert('Email dose not Exist!')
+            return false;
+        }
+    }
+
     return (
         <div>
             <nav className="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
@@ -46,17 +85,17 @@ function Admin_login() {
                     <div className="row g-4">
 
                         <div className="offset-md-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                            <form>
+                            <form action="" method='post' onSubmit={submitHandel}>
                                 <div className="row g-3">
                                     <div className="col-12">
                                         <div className="form-floating">
-                                            <input type="email" className="form-control" id="email" placeholder="Email" />
+                                            <input type="email" className="form-control" value={formvalue.email} onChange={changeHandel} name='email' placeholder="Email" />
                                             <label htmlFor="Email">Email</label>
                                         </div>
                                     </div>
                                     <div className="col-12">
                                         <div className="form-floating">
-                                            <input type="password" className="form-control" id="subject" placeholder="Password" />
+                                            <input type="password" className="form-control" value={formvalue.password} onChange={changeHandel} name='password' placeholder="Password" />
                                             <label htmlFor="Password">Password</label>
                                         </div>
                                     </div>
@@ -71,7 +110,7 @@ function Admin_login() {
                 </div>
             </div>
             <div className="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
-               
+
                 <div className="container">
                     <div className="copyright">
                         <div className="row">

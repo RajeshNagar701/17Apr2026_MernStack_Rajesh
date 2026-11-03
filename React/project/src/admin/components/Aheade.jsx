@@ -1,7 +1,20 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom'
+import { NavLink, useNavigate } from 'react-router-dom'
 
 function Aheade({title}) {
+
+
+    const redirect = useNavigate();
+    const admin_logout = () => {
+        sessionStorage.removeItem('a_id')
+        sessionStorage.removeItem('a_name')
+
+        alert('Logout Success!')
+        redirect('/admin-login');
+        return false;
+    }
+
+
     return (
         <div>
             {/* Navbar Start */}
@@ -48,7 +61,7 @@ function Aheade({title}) {
                         <NavLink to="/manage_contact" className="nav-item nav-link">Contact</NavLink>
 
                     </div>
-                    <a href className="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Logout <i className="fa fa-arrow-right ms-3" /></a>
+                    <a href="#" onClick={admin_logout} className="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Logout <i className="fa fa-arrow-right ms-3" /></a>
                 </div>
             </nav>
             {/* Navbar End */}

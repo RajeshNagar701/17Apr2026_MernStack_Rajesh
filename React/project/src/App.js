@@ -26,6 +26,7 @@ import Manage_contact from "./admin/pages/Manage_contact";
 import Signup from "./website/pages/Signup";
 import View_course from "./website/pages/View_course";
 import Edit_category from "./admin/pages/Edit_category";
+import Login from "./website/pages/Login";
 
 function App() {
   return (
@@ -40,6 +41,7 @@ function App() {
           <Route path="/team" element={<><Header title="Team"/><Team/><Footer/></>}></Route>
           <Route path="/testimonial" element={<><Header title="Testimonial"/><Testimonial/><Footer/></>}></Route>
           <Route path="/signup" element={<><Header title="Signup"/><Signup/><Footer/></>}></Route>
+          <Route path="/login" element={<><Header title="Login"/><Login/><Footer/></>}></Route>
           <Route path="*" element={<><Header title="Page Not Found"/><Pnf/><Footer/></>}></Route>
 
 

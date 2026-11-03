@@ -1,6 +1,6 @@
 
 import { Helmet } from 'react-helmet'
-import { Link, NavLink } from 'react-router-dom'
+import { Link, NavLink, useNavigate } from 'react-router-dom'
 import React, { useEffect, useState } from 'react';
 
 
@@ -55,6 +55,16 @@ function Home_header() {
         };
     }, []);
 
+    const redirect = useNavigate();
+    const user_logout = () => {
+        sessionStorage.removeItem('u_id')
+        sessionStorage.removeItem('u_name')
+
+        alert('Logout Success!')
+        redirect('/');
+        return false;
+
+    }
 
     return (
         <div>
@@ -117,14 +127,39 @@ function Home_header() {
                         <NavLink to="/team" className="nav-item nav-link">Our Team</NavLink>
                         <NavLink to="/testimonial" className="nav-item nav-link">Testimonial</NavLink>
                         <NavLink to="/contact" className="nav-item nav-link">Contact</NavLink>
-                        <div className="nav-item dropdown">
-                            <a href="#" className="nav-link dropdown-toggle" data-bs-toggle="dropdown">My Account</a>
-                            <div className="dropdown-menu fade-down m-0">
-                                <NavLink to="/pnf" className="dropdown-item">Profile</NavLink>
-                            </div>
-                        </div>
+                        {
+                            (() => {
+                                if (sessionStorage.getItem('u_id')) {
+                                    return (
+                                        <div className="nav-item dropdown">
+                                            <a href="#" className="nav-link dropdown-toggle" data-bs-toggle="dropdown">Hi.. {sessionStorage.getItem('u_name')}</a>
+                                            <div className="dropdown-menu fade-down m-0">
+                                                <NavLink to="/pnf" className="dropdown-item">Profile</NavLink>
+                                            </div>
+                                        </div>
+                                    )
+                                }
+                            }
+                            )()}
+
+
+
                     </div>
-                     <Link to="/signup" className="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Signup<i className="fa fa-arrow-right ms-3" /></Link>
+
+                    {
+                        (() => {
+                            if (sessionStorage.getItem('u_id')) {
+                                return (
+                                    <Link to="#" onClick={user_logout} className="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Logout<i className="fa fa-arrow-right ms-3" /></Link>
+                                )
+                            }
+                            else {
+                                return (
+                                    <Link to="/login" className="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Login<i className="fa fa-arrow-right ms-3" /></Link>
+                                )
+                            }
+                        }
+                        )()}
                 </div>
             </nav>
             {/* Navbar End */}
