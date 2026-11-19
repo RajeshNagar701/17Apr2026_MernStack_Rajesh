@@ -28,41 +28,64 @@ import View_course from "./website/pages/View_course";
 import Edit_category from "./admin/pages/Edit_category";
 import Login from "./website/pages/Login";
 
+// tostify popup
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import Profile from "./website/pages/Profile";
+import Ubefore_auth from "./website/pages/Ubefore_auth";
+import Uafter_auth from "./website/pages/Uafter_auth";
+import Aafter_auth from "./admin/pages/Aafter_auth";
+import Abefore_auth from "./admin/pages/Abefore_auth";
+
+
 function App() {
   return (
     <div className="App">
-       <BrowserRouter>
+      <BrowserRouter>
+        <ToastContainer></ToastContainer>
         <Routes>
-          <Route path="/" element={<><Home_header/><Home/><Footer/></>}></Route>
-          <Route path="/about" element={<><Header title="About"/><About/><Footer/></>}></Route>
-          <Route path="/contact" element={<><Header title="Contact"/><Contacts/><Footer/></>}></Route>
-          <Route path="/courses" element={<><Header title="Course Categories"/><Course/><Footer/></>}></Route>
-          <Route path="/view_course/:id" element={<><Header title="View Course"/><View_course/><Footer/></>}></Route>
-          <Route path="/team" element={<><Header title="Team"/><Team/><Footer/></>}></Route>
-          <Route path="/testimonial" element={<><Header title="Testimonial"/><Testimonial/><Footer/></>}></Route>
-          <Route path="/signup" element={<><Header title="Signup"/><Signup/><Footer/></>}></Route>
-          <Route path="/login" element={<><Header title="Login"/><Login/><Footer/></>}></Route>
-          <Route path="*" element={<><Header title="Page Not Found"/><Pnf/><Footer/></>}></Route>
+          <Route path="/" element={<><Home_header /><Home /><Footer /></>}></Route>
+          <Route path="/about" element={<><Header title="About" /><About /><Footer /></>}></Route>
+          <Route path="/contact" element={<><Header title="Contact" /><Contacts /><Footer /></>}></Route>
+          <Route path="/courses" element={<><Header title="Course Categories" /><Course /><Footer /></>}></Route>
+          <Route path="/view_course/:id" element={<><Header title="View Course" /><View_course /><Footer /></>}></Route>
+          <Route path="/team" element={<><Header title="Team" /><Team /><Footer /></>}></Route>
+          <Route path="/testimonial" element={<><Header title="Testimonial" /><Testimonial /><Footer /></>}></Route>
+
+          <Route element={<Ubefore_auth />}>
+            <Route path="/signup" element={<><Header title="Signup" /><Signup /><Footer /></>}></Route>
+            <Route path="/login" element={<><Header title="Login" /><Login /><Footer /></>}></Route>
+          </Route>
+
+          <Route element={<Uafter_auth />}>
+            <Route path="/profile" element={<><Header title="Profile" /><Profile /><Footer /></>}></Route>
+          </Route>
+
+          <Route path="*" element={<><Header title="Page Not Found" /><Pnf /><Footer /></>}></Route>
 
 
-          <Route path="/admin-login" element={<><Admin_login/></>}></Route>
-          <Route path="/dashboard" element={<><Aheade title="Dashboard"/><Dashboard/><Afooter/></>}></Route>
-          <Route path="/add_categories" element={<><Aheade title="Add Categories"/><Add_categories/><Afooter/></>}></Route>
-          <Route path="/manage_categories" element={<><Aheade title="Manage Categories"/><Manage_categories/><Afooter/></>}></Route>
-          <Route path="/edit_category/:id" element={<><Aheade title="Edit Category"/><Edit_category/><Afooter/></>}></Route>
+
+          <Route element={<Abefore_auth />}>
+            <Route path="/admin-login" element={<><Admin_login /></>}></Route>
+          </Route>
           
-          <Route path="/add_courses" element={<><Aheade title="Add Course"/><Add_courses/><Afooter/></>}></Route>
-          <Route path="/manage_courses" element={<><Aheade title="Manage Course"/><Manage_courses/><Afooter/></>}></Route>
-          <Route path="/add_team" element={<><Aheade title="Add Team"/><Add_team/><Afooter/></>}></Route>
-          <Route path="/manage_team" element={<><Aheade title="Manage Team"/><Manage_team/><Afooter/></>}></Route>
-          <Route path="/add_testimonial" element={<><Aheade title="Add Testimonial"/><Add_testimonial/><Afooter/></>}></Route>
-          <Route path="/manage_testimonial" element={<><Aheade title="Manage Testimonial"/><Manage_testimonial/><Afooter/></>}></Route>
-          <Route path="/manage_student" element={<><Aheade title="Manage Student"/><Manage_student/><Afooter/></>}></Route>
-          <Route path="/manage_contact" element={<><Aheade title="Manage Contact"/><Manage_contact/><Afooter/></>}></Route>
-
+          <Route element={<Aafter_auth />}>
+            <Route path="/dashboard" element={<><Aheade title="Dashboard" /><Dashboard /><Afooter /></>}></Route>
+            <Route path="/add_categories" element={<><Aheade title="Add Categories" /><Add_categories /><Afooter /></>}></Route>
+            <Route path="/manage_categories" element={<><Aheade title="Manage Categories" /><Manage_categories /><Afooter /></>}></Route>
+            <Route path="/edit_category/:id" element={<><Aheade title="Edit Category" /><Edit_category /><Afooter /></>}></Route>
+            <Route path="/add_courses" element={<><Aheade title="Add Course" /><Add_courses /><Afooter /></>}></Route>
+            <Route path="/manage_courses" element={<><Aheade title="Manage Course" /><Manage_courses /><Afooter /></>}></Route>
+            <Route path="/add_team" element={<><Aheade title="Add Team" /><Add_team /><Afooter /></>}></Route>
+            <Route path="/manage_team" element={<><Aheade title="Manage Team" /><Manage_team /><Afooter /></>}></Route>
+            <Route path="/add_testimonial" element={<><Aheade title="Add Testimonial" /><Add_testimonial /><Afooter /></>}></Route>
+            <Route path="/manage_testimonial" element={<><Aheade title="Manage Testimonial" /><Manage_testimonial /><Afooter /></>}></Route>
+            <Route path="/manage_student" element={<><Aheade title="Manage Student" /><Manage_student /><Afooter /></>}></Route>
+            <Route path="/manage_contact" element={<><Aheade title="Manage Contact" /><Manage_contact /><Afooter /></>}></Route>
+          </Route>
 
         </Routes>
-       </BrowserRouter>
+      </BrowserRouter>
     </div>
   );
 }

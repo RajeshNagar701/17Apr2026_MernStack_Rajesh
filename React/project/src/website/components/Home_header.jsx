@@ -2,7 +2,7 @@
 import { Helmet } from 'react-helmet'
 import { Link, NavLink, useNavigate } from 'react-router-dom'
 import React, { useEffect, useState } from 'react';
-
+import swal from 'sweetalert';
 
 
 function Home_header() {
@@ -60,7 +60,12 @@ function Home_header() {
         sessionStorage.removeItem('u_id')
         sessionStorage.removeItem('u_name')
 
-        alert('Logout Success!')
+        swal({
+            title: "Success!",
+            text: "User Logout Success!!",
+            icon: "success",
+            button: "Aww yiss!",
+        });
         redirect('/');
         return false;
 
@@ -134,7 +139,7 @@ function Home_header() {
                                         <div className="nav-item dropdown">
                                             <a href="#" className="nav-link dropdown-toggle" data-bs-toggle="dropdown">Hi.. {sessionStorage.getItem('u_name')}</a>
                                             <div className="dropdown-menu fade-down m-0">
-                                                <NavLink to="/pnf" className="dropdown-item">Profile</NavLink>
+                                                <NavLink to="/profile" className="dropdown-item">Profile</NavLink>
                                             </div>
                                         </div>
                                     )

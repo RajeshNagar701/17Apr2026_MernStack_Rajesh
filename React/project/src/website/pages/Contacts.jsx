@@ -1,27 +1,52 @@
 import axios from 'axios';
 import React, { useState } from 'react'
+import { toast } from 'react-toastify';
 
 function Contacts() {
 
-    const [formvalue,setFormvalue]=useState({
-        name:"",
-        email:"",
-        comment:""
+    const [formvalue, setFormvalue] = useState({
+        name: "",
+        email: "",
+        comment: ""
     })
 
-    const changeHandel=(e)=>{
-        setFormvalue({...formvalue,id:new Date().getTime().toString(),[e.target.name]:e.target.value})
+    const changeHandel = (e) => {
+        setFormvalue({ ...formvalue, id: new Date().getTime().toString(), [e.target.name]: e.target.value })
         console.log(formvalue);
+    }
+
+    const validation = () => {
+
+        var result = true;
+        if (formvalue.name == "") {
+            result = false
+            toast.error('Name Field is required !')
+            return false;
+        }
+        if (formvalue.email == "") {
+            result = false
+            toast.error('Email Field is required !')
+            return false;
+        }
+        if (formvalue.comment == "") {
+            result = false
+            toast.error('Comment Field is required !')
+            return false;
+        }
+        return result;
     }
 
     const submitHandel = async (e) => {
         e.preventDefault(); // not refresh
-        const res = await axios.post(`http://localhost:3000/contact`,formvalue);
-        setFormvalue({...formvalue,name:"",email:"",comment:""})
-        alert('Submited Success!')
-        return false;
+        if (validation()) {
+            const res = await axios.post(`http://localhost:3000/contact`, formvalue);
+            setFormvalue({ ...formvalue, name: "", email: "", comment: "" })
+            toast.success('Inquiry Submitted!', {
+                position: "top-center"
+            });
+            return false;
+        }
     }
-
 
     return (
         <div>
@@ -82,7 +107,7 @@ function Contacts() {
                                             <label htmlFor="email">Your Email</label>
                                         </div>
                                     </div>
-                                    
+
                                     <div className="col-12">
                                         <div className="form-floating">
                                             <textarea className="form-control" value={formvalue.comment} onChange={changeHandel} name='comment' placeholder="Leave a message here" id="message" style={{ height: 150 }} defaultValue={""} />

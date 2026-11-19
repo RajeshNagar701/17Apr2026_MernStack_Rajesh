@@ -118,6 +118,36 @@
       "email": "akash@gmail.com",
       "comment": "mobile plz",
       "id": "uYZavmNF8VU"
+    },
+    {
+      "name": "Nirav P. Nagar",
+      "email": "nirav@gmail.com",
+      "comment": "HELLO",
+      "id": "pRPjRI9wPVM"
+    },
+    {
+      "name": "Mahesh",
+      "email": "mahesh@gmail.com",
+      "comment": "demo message",
+      "id": "RYlMNSAKKPM"
+    },
+    {
+      "name": "SDAAAD",
+      "email": "rajesh@gmail.com",
+      "comment": "SADSADSAD",
+      "id": "B_vTUu2KpJQ"
+    },
+    {
+      "name": "sads",
+      "email": "rajesh@gmail.com",
+      "comment": "sadsadsad",
+      "id": "SyOMFeXS3LY"
+    },
+    {
+      "name": "sadsad",
+      "email": "rajes@gmail.com",
+      "comment": "sadsadsa",
+      "id": "5vjn6VlEu9o"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

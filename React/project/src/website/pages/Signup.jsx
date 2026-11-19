@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom';
+import swal from 'sweetalert';
 
 function Signup() {
 
@@ -21,14 +22,25 @@ function Signup() {
         e.preventDefault(); // not refresh
         const result = await axios.get(`http://localhost:3000/student?email=${formvalue.email}`);
         if (result.data.length > 0) {
-            alert('Email id is already Exist, Failed!')
+
+            swal({
+                    title: "Failed!",
+                    text: "Email id is already Exist, Failed!",
+                    icon: "error",
+                    button: "Ohh No!",
+                });
             return false;
         }
         else
         {
             const res = await axios.post(`http://localhost:3000/student`, formvalue);
             setFormvalue({ ...formvalue, name: "", email: "", password: "", image: "", mobile: "" })
-            alert('Signup Success!')
+            swal({
+                    title: "Success!",
+                    text: "User Signup Success!!",
+                    icon: "success",
+                    button: "Aww yiss!",
+                });
             return false;
         }
 

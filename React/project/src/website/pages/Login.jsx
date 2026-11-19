@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom';
+import swal from 'sweetalert';
 
 function Login() {
 
@@ -22,20 +23,34 @@ function Login() {
             if (res.data[0].password == formvalue.password) {
 
                 // authantication
-                sessionStorage.setItem('u_id',res.data[0].id)
-                sessionStorage.setItem('u_name',res.data[0].name)
-
-                alert('Login Success!')
+                sessionStorage.setItem('u_id', res.data[0].id)
+                sessionStorage.setItem('u_name', res.data[0].name)
+                swal({
+                    title: "Success!",
+                    text: "User Login Success!!",
+                    icon: "success",
+                    button: "Aww yiss!",
+                });
                 redirect('/');
                 return false;
             }
             else {
-                alert('Password Not Match!')
+                swal({
+                    title: "Failed!",
+                    text: "Password Not Match!",
+                    icon: "error",
+                    button: "Ohh No!",
+                });
                 return false;
             }
         }
         else {
-            alert('Email dose not Exist!')
+            swal({
+                    title: "Failed!",
+                    text: "Email dose not Exist!",
+                    icon: "error",
+                    button: "Ohh No!",
+                });
             return false;
         }
     }
